@@ -12,6 +12,7 @@
 
 import sys
 
+
 if __name__ == '__main__':
     if sys.version_info < (3, 0):
         print("\nThis is the Python 3 version of Python Koans, but you are " +
@@ -30,6 +31,6 @@ if __name__ == '__main__':
                   "But lets see how far we get...\n" +
                   "********************************************************\n")
 
-        from runner.mountain import Mountain
+        from python3.runner.mountain import Mountain
 
         Mountain().walk_the_path(sys.argv)
