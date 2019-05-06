@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from runner.koan import *
 
 # You need to finish implementing triangle() in the file 'triangle.py'
+from python3.runner.koan import Koan
 from .triangle import *
 
 class AboutTriangleProject2(Koan):
@@ -12,7 +12,7 @@ class AboutTriangleProject2(Koan):
     def test_illegal_triangles_throw_exceptions(self):
         # All sides should be greater than 0
         with self.assertRaises(TriangleError):
-            triangle(0, 0, 0)
+            triangle(0,0,-1)
         with self.assertRaises(TriangleError):
             triangle(3, 4, -5)
 
