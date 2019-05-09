@@ -7,8 +7,8 @@
 # Note: Both blocks and generators use a yield keyword, but they behave
 # a lot differently
 #
+from python3.runner.koan import Koan
 
-from runner.koan import *
 
 class AboutGenerators(Koan):
 

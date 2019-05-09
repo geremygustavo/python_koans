@@ -18,22 +18,19 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    try:
-        if a < 0 or b < 0 or c < 0:
-            breakpoint()
-        elif a == b and b == c:
+    if a + b <= c or a + c <= b or b + c <= a:
+        raise TriangleError
+    else:
+        if a == b and b == c:
             return 'equilateral'
         elif a == b or a == c or b == c:
             return 'isosceles'
         elif a != b or a != c or b != c:
             return 'scalene'
 
-    except:
-        return ValueError
-
 
 # Error class used in part 2.  No need to change this code.
 
 
-class TriangleError():
+class TriangleError(Exception):
     pass
