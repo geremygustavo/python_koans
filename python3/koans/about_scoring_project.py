@@ -31,10 +31,49 @@ from runner.koan import *
 # More scoring examples are given in the tests below:
 #
 # Your goal is to write the score method.
+from python3.runner.koan import Koan
+
 
 def score(dice):
-    # You need to write this method
-    pass
+    sum = 0
+    cont1 = 0
+    cont2 = 0
+    cont3 = 0
+    cont4 = 0
+    cont5 = 0
+    cont6 = 0
+    for x in dice:
+        if x == 5:
+            cont5 += 1
+            if cont5 == 3:
+                sum += 400
+            else:
+                sum += 50
+        if x == 1:
+            cont1 += 1
+            if cont1 == 3:
+                sum += 800
+            else:
+                sum += 100
+        if x == 2:
+            cont2 += 1
+            if cont2 == 3:
+                sum += 200
+        if x == 3:
+            cont3 += 1
+            if cont3 == 3:
+                sum += 300
+        if x == 4:
+            cont4 += 1
+            if cont4 == 3:
+                sum += 400
+        if x == 6:
+            cont6 += 1
+            if cont6 == 3:
+                sum += 600
+
+    return sum
+
 
 class AboutScoringProject(Koan):
     def test_score_of_an_empty_list_is_zero(self):
@@ -47,26 +86,26 @@ class AboutScoringProject(Koan):
         self.assertEqual(100, score([1]))
 
     def test_score_of_multiple_1s_and_5s_is_the_sum_of_individual_scores(self):
-        self.assertEqual(300, score([1,5,5,1]))
+        self.assertEqual(300, score([1, 5, 5, 1]))
 
     def test_score_of_single_2s_3s_4s_and_6s_are_zero(self):
-        self.assertEqual(0, score([2,3,4,6]))
+        self.assertEqual(0, score([2, 3, 4, 6]))
 
     def test_score_of_a_triple_1_is_1000(self):
-        self.assertEqual(1000, score([1,1,1]))
+        self.assertEqual(1000, score([1, 1, 1]))
 
     def test_score_of_other_triples_is_100x(self):
-        self.assertEqual(200, score([2,2,2]))
-        self.assertEqual(300, score([3,3,3]))
-        self.assertEqual(400, score([4,4,4]))
-        self.assertEqual(500, score([5,5,5]))
-        self.assertEqual(600, score([6,6,6]))
+        self.assertEqual(200, score([2, 2, 2]))
+        self.assertEqual(300, score([3, 3, 3]))
+        self.assertEqual(400, score([4, 4, 4]))
+        self.assertEqual(500, score([5, 5, 5]))
+        self.assertEqual(600, score([6, 6, 6]))
 
     def test_score_of_mixed_is_sum(self):
-        self.assertEqual(250, score([2,5,2,2,3]))
-        self.assertEqual(550, score([5,5,5,5]))
-        self.assertEqual(1150, score([1,1,1,5,1]))
+        self.assertEqual(250, score([2, 5, 2, 2, 3]))
+        self.assertEqual(550, score([5, 5, 5, 5]))
+        self.assertEqual(1150, score([1, 1, 1, 5, 1]))
 
     def test_ones_not_left_out(self):
-        self.assertEqual(300, score([1,2,2,2]))
-        self.assertEqual(350, score([1,5,2,2,2]))
+        self.assertEqual(300, score([1, 2, 2, 2]))
+        self.assertEqual(350, score([1, 5, 2, 2, 2]))

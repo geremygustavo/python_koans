@@ -4,10 +4,10 @@
 #
 # Based on AboutSandwichCode in the Ruby Koans
 #
+import re
 
-from runner.koan import *
+from python3.runner.koan import Koan
 
-import re # For regular expression string comparisons
 
 class AboutWithStatements(Koan):
     def count_lines(self, file_name):
@@ -22,7 +22,7 @@ class AboutWithStatements(Koan):
             self.fail()
 
     def test_counting_lines(self):
-        self.assertEqual(__, self.count_lines("example_file.txt"))
+        self.assertEqual(4, self.count_lines("example_file.txt"))
 
     # ------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ class AboutWithStatements(Koan):
             self.fail()
 
     def test_finding_lines(self):
-        self.assertEqual(__, self.find_line("example_file.txt"))
+        self.assertEqual('test\n', self.find_line("example_file.txt"))
 
     ## ------------------------------------------------------------------
     ## THINK ABOUT IT:
