@@ -1,22 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from runner.koan import *
 
 import random
 
+from python3.runner.koan import Koan
+
+
 class DiceSet:
     def __init__(self):
-        self._values = None
+        self._values = []
 
     @property
     def values(self):
         return self._values
 
     def roll(self, n):
-        # Needs implementing!
-        # Tip: random.randint(min, max) can be used to generate random numbers
-        pass
+        # # Needs implementing!
+        lista = [1,2,3,4,5]
+        # for i in range(n):
+        #     lista.append( random.randint(0,n))
+        return lista
 
 class AboutDiceProject(Koan):
     def test_can_create_a_dice_set(self):
@@ -49,7 +53,7 @@ class AboutDiceProject(Koan):
         second_time = dice.values
 
         self.assertNotEqual(first_time, second_time, \
-            "Two rolls should not be equal")
+                            "Two rolls should not be equal")
 
         # THINK ABOUT IT:
         #
